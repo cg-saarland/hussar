@@ -1,0 +1,6 @@
+#Title Prop_SBR_ReceiverSet_Angle_of_Arrival(Theta)
+#Graph Polar_Stem
+Angle(Degree)  Received_Power/RayPowerThreshold(dBm)  Received_Power(dBm)
+90.000000  2.492470  -97.507530
+90.000000  34.836877  -65.163123
+90.000000  21.314976  -78.685024

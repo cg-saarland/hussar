@@ -1,0 +1,13 @@
+#Title Field_Sensor_1
+#Graph Table - Linear Scale
+#Maximum magnitude of E: 8.682214e+002, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum magnitude of H: 8.682214e+002, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum x component of E: 1.189389e-002, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum y component of E: 1.038965e-003, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum z component of E: 8.682214e+002, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum x component of H: 2.516920e+000, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum y component of H: 2.569020e-003, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+#Maximum z component of H: 0.000000e+000, at (8.960000e-001, 1.500000e-002, 6.700000e-002)
+# X  Y  Z  EMagX  EPhX  EMagY  EPhY  EMagZ  EPhZ  HMagX  HPhX  HMagY  HPhY  HMagZ  HPhZ
+8.960000e-001 1.500000e-002 6.700000e-002 1.189389e-002 -2.808353e+000 1.038965e-003 2.254677e-001 8.682214e+002 1.116904e+000 2.516920e+000 -1.995599e+000 2.569020e-003 -2.529865e+000 0.000000e+000 0.000000e+000
+

@@ -1,0 +1,24 @@
+
+**** Reading Input Files ****
+Read in Input File.
+Project Path = C:\Users\Alexander Rath\3D Objects\SimpleBoxSBR
+Read in Building File.
+Read in Terrain File.
+Read in Transmitter File.
+Read in Receiver File.
+
+**** Building K-d Tree ****
+Number of nodes: 62
+
+**** Generating Source Rays ****
+
+**** Gererating Rays ****
+
+**** Calculating Source Diffractions ****
+Diffractions Remaining: 0
+**** Tracing Rays ****
+Rays remaining: 0
+
+**** Writing Output Files ****
+Finished writing output files.
+Simulation Completed!

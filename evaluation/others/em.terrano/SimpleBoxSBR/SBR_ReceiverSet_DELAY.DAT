@@ -1,0 +1,6 @@
+#Title Power Delay Profile (Over Receiver Sensitivity) 
+#Graph Bar Chart
+Time(nsec)  Received_Power/RayPowerThreshold(dBm)  Received_Power(dBm)
+2.743523  2.492470  -97.507530
+2.277387  34.836877  -65.163123
+2.335944  21.314976  -78.685024

@@ -7,12 +7,12 @@ The goal of this project is to transfer ideas from Light Transport Simulation to
 * Effective sampling strategies (such as low-discrepancy sampling, path guiding etc.)
 * Efficient implementation (in particular using hardware accelerated ray tracing)
 
-This repository contains the authors implementation that was developed as part of the project (in particular, [libhussar](libhussar)). A description of our algorithm and a summary of our evaluation thereof will be made available shortly.
+This repository contains the authors implementation that was developed as part of the project (in particular, [libhussar](libhussar)). A formal paper outlining and properly evaluating our algorithm is currently still in the works.
 
 ---
 
 ## Overview
-This codebase is split up into several libraries and applications.  
+The implementation is split up into several libraries and applications.  
 Note that we do not currently provide any front-end for reading scene descriptions from files. Instead, we provide libraries and example code that can be used to easily write custom simulators that are tailored to the user's particular use-case. To this end, please have a look at the examples in the [`examples`](#examples) suite, which serve as a good starting point for writing custom simulators.
 
 #### [libradar](libradar)
@@ -37,6 +37,19 @@ It also contains code to interface with the stepper motors attached to the Ardui
 #### [examples](examples)
 Command-line applications that utilize `libhussar` to output simulated Radar signals for different test cases.  
 These applications are a great starting point for anyone interested in using our libraries.
+
+---
+
+## Other resources
+Apart from the implementation of our algorithm, this repository also includes some additional resources, in particular:
+
+#### [cad](cad)
+This directory contains models of our 3d printed parts that constitute our measurement setups.
+
+#### [evaluation](evaluation)
+Some of our measurements, in particular those of dihedral reflectors, can be found in this directory.
+There is also a short evaluation and comparison with commercial software.
+A full evaluation with more complex works and proper measurements is currently still in the works.
 
 ---
 

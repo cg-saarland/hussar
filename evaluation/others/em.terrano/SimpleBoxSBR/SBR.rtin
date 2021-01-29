@@ -1,0 +1,48 @@
+Version Number 1
+Output filename
+SBR_results.rtout
+Terrain filename
+SBR.ter
+Building filename
+SBR.bdg
+Transmitter filename
+SBR.trs
+Receiver filename
+SBR.rcv
+Simulation domain
+0 
+Diffraction inclusion 1
+LOS exclusion 1
+Wall thickness 0.500000
+Angular resolution 1.000000
+Ray power threshold -100.000000
+Ignore ray power threshold 1
+Simulation mode 0
+Long-haul solver mode 0
+Terrain profile resolution 5.000000
+Obstruction height threshold 5.000000
+Obstruction lateral clearance 5.000000
+Terrain profile smoothing filter type 0
+Terrain profile smoothing filter order 1
+Save terrain profile data 0
+Incoherent superposition 0
+Global weather type 0
+Global weather parameter 0.0000e+000
+Standard atmosphere 0
+Refractivity gradient -39.000000
+Use linear interpolation of terrain profile data 0
+Use database for local earth surface material definition 0
+Use database for local earth surface RMS height 0
+Skip reflection 0
+Multi-frequency pattern 0
+E-Field normalization 0
+Huygens ray output data 0
+Radar simulation output type 0
+Project Folder
+C:\Users\Alexander Rath\3D Objects\SimpleBoxSBR
+Number of ray bounces 10
+Atmospheric M-profile
+Number of segments 1
+0.000000 0.000000 0.000000 118.000000 300.000000
+Domain Offsets
+0.010000 0.010000 0.010000 0.010000 0.010000 0.010000
