@@ -157,7 +157,7 @@ public:
     bool useGeometricalOptics = true;  ///< should always be true!
     bool poDiffraction        = !true; ///< ignore visibility for next event estimation
     bool doGuiding            = true;  ///< improves sampling significantly
-    bool clearBeforeIteration = !true; ///< requests that each render interation in guiding starts with a fresh frame
+    bool clearBeforeIteration = true; ///< requests that each render interation in guiding starts with a fresh frame
 
     bool correctPhase         = !true; ///< use with filteringSphere to simulate SBR behavior
     bool filterGuiding        = true; ///< helps with small filtering spheres
@@ -167,7 +167,7 @@ public:
     Float filteringMin        = 600; ///< when filteringSphere = false
     Float filteringMax        = 900; ///< when filteringSphere = false
 
-    Float filteringRadius     = correctPhase ? 0.5 : 20; ///< in wavelengths, used when filteringSphere = true
+    Float filteringRadius     = correctPhase ? 0.5 : 160; ///< in wavelengths, used when filteringSphere = true
 
     template<typename Backend>
     void run(Backend &backend, const Scene &scene, long samples, bool *interruptFlag = nullptr) {
