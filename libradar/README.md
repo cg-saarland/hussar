@@ -1,9 +1,6 @@
 # libradar
 This tiny header-only library contains data structures, physical units and constants, as well as equations for frequency-modulated continuous-wave (FMCW) Radar systems. Since it contains the basics required to represent and process Radar frames, it serves as common dependency for all other HUSSAR libraries and applications.
 
-## Usage
-@ todo
-
 ## Overview
 Due to its simplicity, this library only consists of three files.
 
@@ -35,5 +32,5 @@ Since this library supports execution in the CUDA environment, a data type that 
 ## Installation
 This library uses CMake as build system and requires a C++17 capable compiler. It can be used as a dependency of other libraries and applications by using the CMake `ADD_SUBDIRECTORY` command. This library has the following dependencies:
 
-* Eigen3 (@todo this should actually be optional)
+* Eigen3
 * fftw3 (optional, if available allows use of the `radar::Frame::fft` method)

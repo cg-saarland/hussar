@@ -8,6 +8,9 @@ We currently only support 16-bit sample mode. Please make sure that the followin
 * `16BIT_ON`
 * `SW_CONFIG`
 
+We have included [a script](scripts/SetupDataCapture_xWR.lua) for Texas Instruments' _mmWave Studio_ that configures the requires parameters of the radar sensor
+and puts it into interactive capture mode.
+
 Note that this library has only been tested with `AWR1243` devices so far.
 
 ## Usage

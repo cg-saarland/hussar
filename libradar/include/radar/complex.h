@@ -271,6 +271,7 @@ RADAR_CPU_GPU complex<Scalar> &complex<Scalar>::operator/=(const complex<Other> 
 
 /**
  * @brief Adds support for the `radar::complex` datatype to the Eigen library.
+ * @todo Add a configuration flag to disable Eigen support.
  */
 namespace Eigen {
 

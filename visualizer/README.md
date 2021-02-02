@@ -27,4 +27,4 @@ Make sure your compiler supports `#include <filesystem>`.
 For GCC, this requires **g++-8** to be installed, which you can configure to be used in CMake by passing `-DCMAKE_CXX_COMPILER=g++-8` to `cmake`.
 
 ## Device setup
-@todo describe steps to be taken in mmWave Studio
+Please check the [`libawrcapture`](../libawrcapture) project for instructions on how to setup the radar sensor for live capture.
