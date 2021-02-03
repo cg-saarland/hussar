@@ -13,6 +13,11 @@ and puts it into interactive capture mode.
 
 Note that this library has only been tested with `AWR1243` devices so far.
 
+### Issues with mmWave Studio
+mmWave Studio can be challenging to get running.
+We had no success on Windows 10 and Windows 7 -- however, an older version of Windows 8.1 seemed to run it just fine.
+According to people who had similar issues, it might be possible to install the [XDS emulation software for 32 bit](https://software-dl.ti.com/dsps/dsps_public_sw/sdo_ccstudio/emulation/exports/ti_emupack_setup_9.2.0.00002_win_32.exe) to get it running on Windows 10.
+
 ## Usage
 
 ```c++
