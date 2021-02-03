@@ -459,9 +459,9 @@ protected:
     long sampleIndexOffset;
 
 #ifdef __CUDACC__
-    double totalWeight;
+    Float totalWeight;
 #else
-    std::atomic<double> totalWeight;
+    std::atomic<Float> totalWeight;
 #endif
 
     HUSSAR_CPU_GPU void incrementTotalWeight(Float sampleWeight) {
@@ -470,7 +470,7 @@ protected:
 #else
         /// @todo this is not elegant
         // (and could be more efficient under GCC)
-        double oldV = totalWeight;
+        Float oldV = totalWeight;
         while (!totalWeight.compare_exchange_weak(oldV, oldV + sampleWeight));
 #endif
     }
