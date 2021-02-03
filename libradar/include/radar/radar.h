@@ -16,6 +16,7 @@
 #include <cassert>
 #include <cstring>
 #include <cmath>
+#include <atomic>
 
 #ifdef RADAR_HAS_FFTW3
 #include <fftw3.h>
