@@ -24,20 +24,17 @@ int main() {
     /// MARK: Radar configuration
 
     // configure the parameters of the FMCW ramps
+    // in this example, we are not using any frequency-modulation,
+    // hence the slope of the ramps is zero
     radar::RFConfig rf;
-    rf.antennaDelay = 0.43_ns;
-    
-    rf.startFreq = 77_GHz;
-    rf.freqSlope = 60_MHz / 1_us;
-    rf.adcRate   = 5_MHz;
-    rf.idleTime  = 100_us;
-    rf.rampTime  = 60_us;
+    rf.startFreq = 78_GHz;
+    rf.freqSlope = 0_MHz / 1_us;
 
     // configure the parameters of captured frames
     radar::FrameConfig frameConfig;
-    frameConfig.chirpCount      = 128;
-    frameConfig.samplesPerChirp = 256;
-    frameConfig.channelCount    = 4;
+    frameConfig.chirpCount      = 1;
+    frameConfig.samplesPerChirp = 1;
+    frameConfig.channelCount    = 1;
 
     // higher sample counts produce results will less noise, but will
     // take longer to compute
@@ -47,19 +44,10 @@ int main() {
 
     TriangleMesh mesh;
 
-    /// edge length of the two rectangles that make up the dihedral reflector
-    float size = 50_mm;
-
     // first side of the dihedral reflector
     mesh.addBox(
-        Vector3f(-2_mm, +0_mm, +0_mm),
-        Vector3f(-0_mm, +size, +size)
-    );
-
-    // second side of the dihedral reflector
-    mesh.addBox(
-        Vector3f(+0_mm, +0_mm, -2_mm),
-        Vector3f(+size, +size, -0_mm)
+        Vector3f(-8_mm, -28_mm, -40_mm),
+        Vector3f(+8_mm, +28_mm, +40_mm)
     );
 
     /// MARK: Simulation
@@ -84,12 +72,12 @@ int main() {
     cpu::Backend backend { mesh, *integrator };
 
     // all simulated frames will end up concatenated in a single file
-    std::ofstream file("dihedral.SIM");
+    std::ofstream file("simplebox.SIM");
 
     // simulate the Radar response for a range of angles
-    for (float angleDeg = -55; angleDeg <= +55; angleDeg += 0.25) {
+    for (float angleDeg = -120; angleDeg <= +120; angleDeg += 0.25) {
         // we are rotating our antennas around the y axis
-        Matrix33f rotation = Eigen::AngleAxisf((angleDeg-45) / 180 * Pi, Vector3f::UnitY()).toRotationMatrix();
+        Matrix33f rotation = Eigen::AngleAxisf(angleDeg * Pi/180, Vector3f::UnitY()).toRotationMatrix();
 
         // the local coordinate system of our antennas
         // the z-vector (3rd column) is the direction we are looking at
@@ -101,14 +89,14 @@ int main() {
 
         // place the antennas
         scene->rx = NFAntenna {
-            rotation * Vector3f(896_mm, 67_mm, -5_mm), // location of the receive antenna
-            rotation * facing,                         // local coordinate system of the antenna
-            AWRAngularDistribution()                   // radiation pattern
+            rotation * Vector3f(380_mm, 0_mm, 0_mm), // location of the receive antenna
+            rotation * facing,                       // local coordinate system of the antenna
+            AWRAngularDistribution()                 // radiation pattern
         };
         scene->tx = NFAntenna {
-            rotation * Vector3f(896_mm, 67_mm, -7_mm), // location of the transmit antenna
-            rotation * facing,                         // local coordinate system of the antenna
-            AWRAngularDistribution()                   // radiation pattern
+            rotation * Vector3f(380_mm, 0_mm, 0_mm), // location of the transmit antenna
+            rotation * facing,                       // local coordinate system of the antenna
+            AWRAngularDistribution()                 // radiation pattern
         };
 
         // run the simulation

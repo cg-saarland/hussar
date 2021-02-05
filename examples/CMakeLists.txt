@@ -30,6 +30,7 @@ set (EXAMPLES_CXX11_FEATURES
 
 # Executables
 set (EXAMPLES
+    0_simplebox
     1_dihedral
     2_large_scene
 )

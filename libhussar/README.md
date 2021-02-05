@@ -61,13 +61,10 @@ radar::RFConfig rf;
 rf.antennaDelay = 0.43_ns;
 
 rf.startFreq = 77_GHz;
-rf.adcRate   = 10_MHz;
-rf.freqSlope = 29.982_MHz / 1_us;
-rf.idleTime  = 100_us;
-rf.rampTime  = 60_us;
-
 rf.freqSlope = 60_MHz / 1_us;
 rf.adcRate   = 5_MHz;
+rf.idleTime  = 100_us;
+rf.rampTime  = 60_us;
 
 // configure the parameters of captured frames
 radar::FrameConfig frameConfig;
