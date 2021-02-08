@@ -12,7 +12,6 @@
 
 #include <guiding/structures/btree.h>
 #include <guiding/wrapper.h>
-
 namespace hussar {
 
 template<typename C, typename S = Float>
@@ -466,7 +465,7 @@ protected:
 
     HUSSAR_CPU_GPU void incrementTotalWeight(Float sampleWeight) {
 #ifdef __CUDACC__
-        atomicAdd(&totalWeight, sampleWeight);
+        atomicAdd(&totalWeight, static_cast<double>(sampleWeight));
 #else
         /// @todo this is not elegant
         // (and could be more efficient under GCC)

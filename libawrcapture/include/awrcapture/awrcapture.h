@@ -287,10 +287,14 @@ private:
 
 /**
  * @brief Represents the data port that is used to receive captured radar data.
+ *
+ * @param Allocator The allocator used to allocate and release the data storage of the radar Frame.
+ * This is required to create radar frames that reside in CPU/GPU unified memory.
  */
+ template<typename Allocator>
 class DataPort : public Channel<1472> {
 public:
-    using FrameCallback = std::function<void (radar::Frame<> &)>;
+    using FrameCallback = std::function<void (radar::Frame<Allocator> &)>;
 
     /// Signifies that frames should first be transformed into frequency space before being handed to the user.
     bool performFFT = true;
@@ -329,7 +333,7 @@ private:
         std::unique_ptr<char> buffer;
         float scale = 1.f;
         
-        radar::Frame<> frame;
+        radar::Frame<Allocator> frame;
         
     public:
         void configure(const radar::FrameConfig &frameConfig, int bitDepth) {
