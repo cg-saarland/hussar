@@ -341,18 +341,20 @@ struct Frame {
 
     /**
      * @brief Changes the dimensions of the radar cube described by this frame.
-     * @warning This will erase all existing data.
+     * The data of the cube is left in an undefined state after this operation.
      */
     RADAR_CPU_GPU void configure(const FrameConfig &config) {
-        bool needsRealloc = config.sampleCount() != m_config.sampleCount();
-
+        bool needsRealloc = !m_data || config.sampleCount() != m_config.sampleCount();
         if (needsRealloc) {
             freeData();
             destroyFFTPlan();
+            
         }
-
+        
         m_config = config;
-        m_data = m_alloc.allocate(sampleCount());
+        if (needsRealloc) {
+            m_data = m_alloc.allocate(sampleCount());
+        }
     }
 
     /**
@@ -678,7 +680,6 @@ private:
      */
     void destroyFFTPlan() {
 #ifdef RADAR_HAS_FFTW3
-        fftwf_free(m_data);
         fftwf_destroy_plan((fftwf_plan)m_fftPlan);
 #endif
     }
