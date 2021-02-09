@@ -162,18 +162,9 @@ protected:
 
     /// Reflects a ray in a perfectly specular manner.
     HUSSAR_CPU_GPU void reflectRay(Ray &ray, const Intersection &isect) const {
-        Vector3f polU = ray.d.cross(isect.n).normalized();
-        Vector3f polR = ray.d.cross(polU);
-
-        Vector3f refD = isect.R();
-        Vector3f refPolU = -polU;
-        Vector3f refPolR = refD.cross(refPolU);
-
         Vector3c H = ray.getH();
-        Vector3c refH = H.dot(polU) * refPolU - H.dot(polR) * refPolR;
-
-        ray.d = refD;
-        ray.setH(refH);
+        ray.d = isect.R();
+        ray.setH(2 * isect.n * isect.n.dot(H) - H);
     }
     
     RadarFrame frame;

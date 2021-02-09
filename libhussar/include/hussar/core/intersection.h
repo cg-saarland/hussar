@@ -34,8 +34,6 @@ public:
     /// The ray used for intersection.
     Ray ray;
     
-    const Material *material;
-
     /// Returns the incident direction of the ray, pointing away from the intersection point.
     HUSSAR_CPU_GPU Vector3f wi() const { return -ray.d; }
 
